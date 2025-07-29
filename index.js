@@ -1,6 +1,6 @@
 const fetch = require('node-fetch');
 
-const API_KEY = 'ak_9ab1c365fa7a0fbf97bfe8cf6e5a0ab15a2789ba7e7d7550'; // 🔐 Replace with your key
+const API_KEY = 'ak_9ab1c365fa7a0fbf97bfe8cf6e5a0ab15a2789ba7e7d7550'; 
 const BASE_URL = 'https://assessment.ksensetech.com/api';
 
 async function fetchAllPatients() {
@@ -84,7 +84,6 @@ function processPatients(patients) {
   patients.forEach(patient => {
     const { score, hasIssue, temp } = calculateRiskScore(patient);
 
-    // ✅ DEBUG LOG: Review scores before submission
     console.log(`${patient.patient_id} → Score: ${score} | Temp: ${patient.temperature} | Issue: ${hasIssue}`);
 
     if (score >= 4) highRisk.push(patient.patient_id);
